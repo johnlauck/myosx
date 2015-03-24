@@ -1,0 +1,59 @@
+---
+- hosts: all
+  roles:
+  - { role: hnakamur.osx-rbenv, rbenv_ruby_version: 2.1.5 }
+  - { role: hnakamur.oh-my-zsh, oh_my_zsh_theme: gallois }
+
+  tasks:
+  - homebrew: update_homebrew=yes
+
+  - name: install homebrew packages
+    homebrew: pkg={{ item }} state=present
+    with_items:
+      - nodenv
+      - nodejs
+      - git
+      - zsh
+      - vim
+      - the_silver_searcher
+      - ctags
+      - reattach-to-user-namespace
+      - tmux
+      - docker
+      - go
+
+  - name: install homebrew casks
+    homebrew_cask: name={{ item }} state=present
+    with_items:
+      - font-inconsolata-for-powerline
+      - iterm2
+      - macvim
+      - virtualbox
+      - vagrant
+      - caffeine
+      - alfred
+      - atom
+      - omnifocus
+      - textexpander
+      - evernote
+      - skitch
+      - spotify
+      - skype
+      - github
+      - reggy
+      - bartender
+      - vlc
+      - sourcetree
+      - flux
+      - charles
+      - rubymine
+      - sublime-text
+      - plex-media-server
+      - rdio
+      - fitbit-connect
+      - colloquy
+      - imageoptim
+      - path-finder
+      - cyberduck
+      - kaleidoscope
+      - istat-menus

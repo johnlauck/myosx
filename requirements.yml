@@ -1,0 +1,4 @@
+---
+# Ansible Galaxy Requirements
+- src: hnakamur.osx-rbenv
+- src: hnakamur.oh-my-zsh
