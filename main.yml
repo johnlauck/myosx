@@ -6,6 +6,7 @@
 
   tasks:
   - homebrew: update_homebrew=yes
+  - homebrew_tap: tap=homebrew/science state=present
 
   - name: install homebrew packages
     homebrew: pkg={{ item }} state=present
@@ -21,6 +22,10 @@
       - tmux
       - docker
       - go
+      - r
+      - heroku-toolbelt
+      - s3cmd
+      - awscli
 
   - name: install homebrew casks
     homebrew_cask: name={{ item }} state=present
