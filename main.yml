@@ -1,7 +1,7 @@
 ---
 - hosts: all
   roles:
-  - { role: hnakamur.osx-rbenv, rbenv_ruby_version: 2.1.5 }
+  - { role: hnakamur.osx-rbenv, rbenv_ruby_version: 2.1.6 }
   - { role: hnakamur.oh-my-zsh, oh_my_zsh_theme: gallois }
 
   tasks:
@@ -28,6 +28,10 @@
       - awscli
       - aws-elasticbeanstalk
       - jshon
+      - sysdig
+      - dnsmasq
+      - wget
+      - postgresql
 
   - name: install homebrew casks
     homebrew_cask: name={{ item }} state=present
@@ -63,4 +67,5 @@
       - path-finder
       - cyberduck
       - kaleidoscope
-      - istat-menus
+      # - istat-menus
+      - firefox
