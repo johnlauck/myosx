@@ -6,7 +6,11 @@
 
   tasks:
   - homebrew: update_homebrew=yes
+  - homebrew_tap: tap=caskroom/cask state=present
   - homebrew_tap: tap=homebrew/science state=present
+  - homebrew_tap: tap=caskroom/versions state=present
+  - homebrew_tap: tap=caskroom/fonts state=present
+  - homebrew_tap: tap=neovim/neovim state=present
 
   - name: install homebrew packages
     homebrew: pkg={{ item }} state=present
@@ -36,7 +40,6 @@
   - name: install homebrew casks
     homebrew_cask: name={{ item }} state=present
     with_items:
-      - font-inconsolata-for-powerline
       - iterm2
       - macvim
       - virtualbox
@@ -60,7 +63,6 @@
       - rubymine
       - sublime-text
       - plex-media-server
-      - rdio
       - fitbit-connect
       - colloquy
       - imageoptim
@@ -69,3 +71,6 @@
       - kaleidoscope
       # - istat-menus
       - firefox
+      - google-chrome-beta
+      - google-chrome-canary
+      # - google-chrome-dev
