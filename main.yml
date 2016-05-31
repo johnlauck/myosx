@@ -1,8 +1,8 @@
 ---
 - hosts: all
   roles:
-  - { role: hnakamur.osx-rbenv, rbenv_ruby_version: 2.1.6 }
-  - { role: hnakamur.oh-my-zsh, oh_my_zsh_theme: gallois }
+  - { role: johnlauck.osx-rbenv, rbenv_ruby_version: 2.1.8 }
+  - { role: johnlauck.oh-my-zsh, oh_my_zsh_theme: "gallois" }
 
   tasks:
   - homebrew: update_homebrew=yes
